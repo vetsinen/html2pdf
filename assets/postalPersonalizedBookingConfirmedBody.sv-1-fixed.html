@@ -1,0 +1,127 @@
+<div class="content">
+  <div class="container">
+    <header>
+      <div class="headerContainer">
+        <div class="tenantContainer">
+          <div class="tenantLogo">
+            <img
+              src="cid:ic-illustration-3.png"
+              alt="tenantLogo"
+              style="height: inherit"
+            />
+          </div>
+          <div class="tenantTextFieldsContainer">
+            <p style="font-size: 14px; font-weight: 500">{{careunitName}}</p>
+            <p>{{careunitAddress}}</p>
+          </div>
+        </div>
+        <div>
+          <div class="patientContainer">
+            <div class="patientTextFieldsContainerPN">
+              <p style="margin-bottom: 12px; margin-top: 8px">
+                {{patientPersonalNumber}}
+              </p>
+              <p style="margin-bottom: 12px">{{nowDate}}</p>
+            </div>
+            <div class="patientTextFieldsContainer">
+              <p>{{patientFullName}}</p>
+              <p>{{patientAddress}}</p>
+              <p>{{patientZipCode}} {{patientPostOffice}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="messageContainer">
+      <p style="margin-bottom: 25px; font-size: 18px">
+        Vi har fått en remiss ifrån din läkare för Sömnutredning
+      </p>
+
+      <p style="margin-bottom: 20px">
+        Du är därför välkommen att hämta ut en bärbar utrustning hos oss:
+        <br />
+        <strong>{{visitDate}} {{visitStartTime}}</strong> Du kan bortse från
+        klockslaget då vi har <strong>drop in</strong> och utrustningen kan
+        därmed hämtas <strong>mellan kl 8-12</strong> på
+        <strong>{{careunitAddress}}, Sabbatsbergs sjukhus.</strong>
+        <br />
+        Följ skylten "Sömnapné" och anmäl dig i väntrum 10. Ibland förekommer
+        det väntetid upp till 15 min.
+      </p>
+      <p style="margin-bottom: 20px">
+        <strong
+          >OBSERVERA: Utrustningen ska återlämnas nästföljande vardag mellan kl
+          7-10.
+        </strong>
+      </p>
+      <p style="margin-bottom: 20px">
+        Vi ber dig att logga in i vår patientportal:
+        <strong
+          ><a href="{{appUrl}}"> <i>{{appUrl}}</i></a></strong
+        >
+        innan besöket. Registrera ditt mobilnr/e-post under kontoinställningar
+        så att du kan få information ifrån oss. I patientportalen kan du boka om
+        din tid.
+        <br />
+        <strong
+          >Ca 10 dagar innan besöket kommer du att få en notis om att fylla i
+          ett frågeformulär.</strong
+        >
+      </p>
+      <p style="margin-bottom: 2px">
+        <strong>Ombokning och avbokning</strong>
+      </p>
+      <p style="margin-bottom: 20px">
+        Skulle tiden inte passa ber vi dig boka om din tid via länken ovan. Har
+        du inte möjlighet att logga in kan du avboka din tid via Aleris - vård i
+        mobilen (applikation) eller via telefon {{careunitPhoneNumber}}.
+        <br />
+        Vi ber dig även boka om din tid vid sjukdom.
+      </p>
+      <p style="margin-bottom: 20px">
+        If you need an interpreter (tolk), please contact us as soon as possible
+        at the following number: {{careunitPhoneNumber}}.
+      </p>
+      <p style="margin-bottom: 2px">
+        <strong>Vid besöket</strong>
+      </p>
+      <p style="margin-bottom: 20px">
+        Vänligen <strong>undvik lösnagel och nagellack</strong> på ett pekfinger
+        eftersom syresättningen i blodet ska mätas. Du får med dig en skriftlig
+        instruktion om hur utrustningen ska monteras på kroppen.
+        <br />
+        Medtag legitimation och undvik parfym. Vänligen boka om tiden vid
+        sjukdom.
+      </p>
+      <p style="margin-bottom: 2px">
+        <strong>Avgifter (frikort gäller)</strong>
+      </p>
+      <p style="margin-bottom: 20px">
+        Första besöket på remiss från husläkare kostar 200 kr, övriga besök 400
+        kr. Återbud senare än 24 timmar innan avtalad tid samt uteblivet besök
+        debiteras 400 kr, oavsett om du har frikort.
+      </p>
+      <p style="margin-bottom: 20px">
+        {{careunitName}} medverkar i SESAR, ett nationellt kvalitetsregister för
+        utveckling av sömnapnévården. För mer information: www.sesar.se
+      </p>
+      <p style="margin-bottom: 0px">Vänliga hälsningar,</p>
+      <p style="margin-bottom: 20px">
+        <strong>{{careunitName}}</strong>
+      </p>
+    </div>
+  </div>
+  <div class="footerContainer">
+    <p>
+      För om- eller avbokning kontakta oss via applikationen Aleris – vård i
+      mobilen eller via telefon {{careunitPhoneNumber}}
+    </p>
+    <p>{{careunitAddress}} {{marketingUrl}}</p>
+    <p>
+      Vi ingår i sammanhållen journalföring via journalsystemet Take Care på
+      uppdrag av Region Stockholm
+    </p>
+    <p>{{careunitName}} medverkar i kvalitetsregistret SESAR www.sesar.se</p>
+  </div>
+</div>
