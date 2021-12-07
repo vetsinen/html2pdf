@@ -4,18 +4,18 @@ const puppeteer = require("puppeteer");
 const mustache = require("mustache");
 const fileType = require("file-type");
 
-(async () => {
+async function renderHtmlTemplate(){
   const template = await fs.promises.readFile(
-    "./assets/postalLayout.sv-1.html",
-    {
-      encoding: "utf8",
-    }
+      "./assets/postalLayout.sv-1.template.html",
+      {
+        encoding: "utf8",
+      }
   );
 
   const partials = {
     content: await fs.promises.readFile(
-      "./assets/postalPersonalizedBookingConfirmedBody.sv-1-fixed.html",
-      { encoding: "utf8" }
+        "./assets/postalPersonalizedBookingConfirmedBody.sv-1-fixed.template.html",
+        { encoding: "utf8" }
     ),
   };
 
@@ -48,20 +48,25 @@ const fileType = require("file-type");
     const { mime } = await fileType.fromFile(filePath);
     html = html.replace(cid, `"data:${mime};base64, ${base64}"`);
   }
+  return html
+}
+
+(async () => {
+  const html = await renderHtmlTemplate()
+  await fs.promises.writeFile(`assets/rendered.html`, html);
 
   const browser = await puppeteer.launch({
     args: ["--no-sandbox"],
   });
 
-  const fileName = new Date().toISOString();
-  await fs.promises.writeFile(`${fileName}.html`, html);
   const page = await browser.newPage();
   await page.setContent(html);
   const buffer = await page.pdf({
     preferCSSPageSize: true,
   });
-
   await page.close();
   await browser.close();
-  await fs.promises.writeFile(`${fileName}.pdf`, buffer);
+
+  const fileName = new Date().toISOString();
+  await fs.promises.writeFile(`out/${fileName}.pdf`, buffer);
 })();
